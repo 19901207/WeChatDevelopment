@@ -4,13 +4,13 @@ package cn.edu.sdut.service;
  * 用于调用微信公众平台的access_token接口
  * 
  */
-import java.io.BufferedReader;  
-import java.io.IOException;  
-import java.io.InputStreamReader;  
-import java.net.MalformedURLException;  
-import java.net.URL;  
-import java.net.URLConnection;  
-   
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+ 
 public class WeChatUtil {  
     /*** V型知识库 www.vxzsk.com 
      * 模拟get请求 

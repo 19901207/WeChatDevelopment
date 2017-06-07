@@ -11,6 +11,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
  
+@RequestScoped
+@ManagedBean(name = "util")
 public class WeChatUtil {  
     /*** V型知识库 www.vxzsk.com 
      * 模拟get请求 

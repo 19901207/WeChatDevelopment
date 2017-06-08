@@ -8,23 +8,25 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
-import com.google.gson.
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import javax.faces.bean.ManagedBean;
 import javax.enterprise.context.RequestScoped;
 
+@SuppressWarnings("deprecation")
 @RequestScoped
 @ManagedBean(name = "accessTokenUtil")
 public class AccessTokenUtil {
-	public static final String GET_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token";// 获取access
-																							// url
+	public static final String GET_TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token";
 	public static final String APP_ID = "wxa549b28c24cf341e";
 	public static final String SECRET = "78d8a8cd7a4fa700142d06b96bf44a37";
+	private static HttpClient client;
 
 	// 获取token
+	@SuppressWarnings("finally")
 	public static String getToken(String apiurl, String appid, String secret) {
 		String turl = String.format("%s?grant_type=client_credential&appid=%s&secret=%s", apiurl, appid, secret);
-		HttpClient client = new DefaultHttpClient();
+		client = new DefaultHttpClient();
 		HttpGet get = new HttpGet(turl);
 		JsonParser jsonparer = new JsonParser();// 初始化解析json格式的对象
 		String result = null;

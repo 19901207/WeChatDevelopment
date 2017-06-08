@@ -10,6 +10,9 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+
+import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
  
 @RequestScoped
 @ManagedBean(name = "util")
